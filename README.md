@@ -12,11 +12,4 @@ Audio and artwork sourced from [YZY Radio](https://yzyradio.com) by Stratosphero
 
 Next.js 15 · TypeScript · Tailwind CSS v4 · Embla Carousel · shadcn/ui
 
-## Dev
-
-```sh
-npm install
-npm run dev
-```
-
 > All music belongs to Kanye West / Ye and respective rights holders.
