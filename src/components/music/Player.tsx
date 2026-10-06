@@ -119,21 +119,29 @@ export function Player({
                 });
               }
             }}
-            onPointerUp={() => { bigKnobDrag.current = null; }}
-            onPointerCancel={() => { bigKnobDrag.current = null; }}
+            onPointerUp={() => {
+              bigKnobDrag.current = null;
+            }}
+            onPointerCancel={() => {
+              bigKnobDrag.current = null;
+            }}
             onWheel={(e) => {
               e.preventDefault();
               dispatch({ type: "volume", value: state.volume + (e.deltaY < 0 ? 0.05 : -0.05) });
             }}
             onKeyDown={(e) => {
-              if (["ArrowUp", "ArrowRight", "ArrowDown", "ArrowLeft", "Home", "End"].includes(e.key)) {
+              if (
+                ["ArrowUp", "ArrowRight", "ArrowDown", "ArrowLeft", "Home", "End"].includes(e.key)
+              ) {
                 e.preventDefault();
                 dispatch({
                   type: "volume",
                   value:
-                    e.key === "Home" ? 0
-                    : e.key === "End" ? 1
-                    : state.volume + (["ArrowUp", "ArrowRight"].includes(e.key) ? 0.05 : -0.05),
+                    e.key === "Home"
+                      ? 0
+                      : e.key === "End"
+                        ? 1
+                        : state.volume + (["ArrowUp", "ArrowRight"].includes(e.key) ? 0.05 : -0.05),
                 });
               }
             }}
@@ -141,14 +149,19 @@ export function Player({
             <svg viewBox="0 0 100 100" aria-hidden="true">
               <circle cx="50" cy="50" r="38" className="big-knob-track" />
               <circle
-                cx="50" cy="50" r="38"
+                cx="50"
+                cy="50"
+                r="38"
                 className="big-knob-progress"
                 strokeDasharray={`${state.volume * 239} 239`}
                 transform="rotate(-225 50 50)"
               />
               <circle cx="50" cy="50" r="30" className="big-knob-body" />
               <line
-                x1="50" y1="24" x2="50" y2="32"
+                x1="50"
+                y1="24"
+                x2="50"
+                y2="32"
                 transform={`rotate(${knobAngle} 50 50)`}
                 className="big-knob-marker"
               />
@@ -247,9 +260,11 @@ export function Player({
             if (["ArrowRight", "ArrowLeft", "Home", "End"].includes(e.key)) {
               e.preventDefault();
               seek(
-                e.key === "Home" ? 0
-                : e.key === "End" ? duration
-                : state.elapsed + (e.key === "ArrowRight" ? 5 : -5),
+                e.key === "Home"
+                  ? 0
+                  : e.key === "End"
+                    ? duration
+                    : state.elapsed + (e.key === "ArrowRight" ? 5 : -5),
               );
             }
           }}
@@ -269,7 +284,11 @@ export function Player({
             />
           ))}
         </svg>
-        <span>{!state.noSelection && duration > 0 ? `−${formatTime(duration - state.elapsed)}` : "--:--"}</span>
+        <span>
+          {!state.noSelection && duration > 0
+            ? `−${formatTime(duration - state.elapsed)}`
+            : "--:--"}
+        </span>
       </div>
 
       {/* ── Desktop volume knob ── */}
@@ -295,21 +314,29 @@ export function Player({
                 value: knobDrag.current.value + (knobDrag.current.y - e.clientY) / 110,
               });
           }}
-          onPointerUp={() => { knobDrag.current = null; }}
-          onPointerCancel={() => { knobDrag.current = null; }}
+          onPointerUp={() => {
+            knobDrag.current = null;
+          }}
+          onPointerCancel={() => {
+            knobDrag.current = null;
+          }}
           onWheel={(e) => {
             e.preventDefault();
             dispatch({ type: "volume", value: state.volume + (e.deltaY < 0 ? 0.05 : -0.05) });
           }}
           onKeyDown={(e) => {
-            if (["ArrowUp", "ArrowRight", "ArrowDown", "ArrowLeft", "Home", "End"].includes(e.key)) {
+            if (
+              ["ArrowUp", "ArrowRight", "ArrowDown", "ArrowLeft", "Home", "End"].includes(e.key)
+            ) {
               e.preventDefault();
               dispatch({
                 type: "volume",
                 value:
-                  e.key === "Home" ? 0
-                  : e.key === "End" ? 1
-                  : state.volume + (["ArrowUp", "ArrowRight"].includes(e.key) ? 0.05 : -0.05),
+                  e.key === "Home"
+                    ? 0
+                    : e.key === "End"
+                      ? 1
+                      : state.volume + (["ArrowUp", "ArrowRight"].includes(e.key) ? 0.05 : -0.05),
               });
             }
           }}
@@ -317,7 +344,10 @@ export function Player({
           <svg viewBox="0 0 44 44" aria-hidden="true">
             <circle cx="22" cy="22" r="14" className="knob-body" />
             <line
-              x1="22" y1="12" x2="22" y2="16"
+              x1="22"
+              y1="12"
+              x2="22"
+              y2="16"
               transform={`rotate(${knobAngle} 22 22)`}
               className="knob-marker"
             />

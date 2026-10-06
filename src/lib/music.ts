@@ -279,7 +279,11 @@ export const albums = [
       { title: "Ye vs. The People", src: "/audio/love-everyone/ye-vs-the-people.mp3" },
       { title: "Lift Yourself", src: "/audio/love-everyone/lift-yourself.mp3" },
       { title: "★ Ghost Town", src: "/audio/love-everyone/ghost-town.mp3", bonus: true },
-      { title: "★ Brothers Forever", src: "/audio/love-everyone/brothers-forever.mp3", bonus: true },
+      {
+        title: "★ Brothers Forever",
+        src: "/audio/love-everyone/brothers-forever.mp3",
+        bonus: true,
+      },
     ],
   },
   {
@@ -655,9 +659,23 @@ export function musicReducer(state: MusicState, action: MusicAction): MusicState
     case "focus":
       return { ...state, focused: action.index };
     case "playAlbum":
-      return { ...state, album: action.index, track: 0, playing: true, elapsed: 0, noSelection: false };
+      return {
+        ...state,
+        album: action.index,
+        track: 0,
+        playing: true,
+        elapsed: 0,
+        noSelection: false,
+      };
     case "track":
-      return { ...state, album: action.album, track: action.track, playing: true, elapsed: 0, noSelection: false };
+      return {
+        ...state,
+        album: action.album,
+        track: action.track,
+        playing: true,
+        elapsed: 0,
+        noSelection: false,
+      };
     case "toggle":
       return { ...state, playing: !state.playing };
     case "skip": {

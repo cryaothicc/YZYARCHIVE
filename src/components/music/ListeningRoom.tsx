@@ -134,7 +134,8 @@ export function ListeningRoom() {
           <h1>Good music never dies.</h1>
         </div>
         <span className="collection-count">
-          {String(ALBUM_COUNT).padStart(2, "0")} album <span>/</span> unreleased <span>/</span> alt version
+          {String(ALBUM_COUNT).padStart(2, "0")} album <span>/</span> unreleased <span>/</span> alt
+          version
         </span>
       </section>
       <section
@@ -253,7 +254,10 @@ export function ListeningRoom() {
                 const isBonus = "bonus" in track && track.bonus;
                 const prevIsNotBonus =
                   index > 0 &&
-                  !("bonus" in album.tracks[index - 1]! && (album.tracks[index - 1]! as { bonus?: boolean }).bonus);
+                  !(
+                    "bonus" in album.tracks[index - 1]! &&
+                    (album.tracks[index - 1]! as { bonus?: boolean }).bonus
+                  );
                 return (
                   <li key={track.title}>
                     {isBonus && prevIsNotBonus && <div className="bonus-divider">BONUS</div>}
@@ -314,7 +318,16 @@ export function ListeningRoom() {
       <div className="collection-footer">
         <span>From College Dropout to Bully.</span>
         <span>Unreleased, shelved & forgotten. All in one place.</span>
-        <span className="demo-label"><a href="https://github.com/cryaothicc" target="_blank" rel="noopener noreferrer" style={{color:"inherit",textDecoration:"none"}}>@cryaothicc</a></span>
+        <span className="demo-label">
+          <a
+            href="https://github.com/cryaothicc"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            @cryaothicc
+          </a>
+        </span>
       </div>
       <Player state={state} dispatch={dispatch} />
     </div>
