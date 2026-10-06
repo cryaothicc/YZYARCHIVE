@@ -4,7 +4,7 @@
 
 **Live: https://yzyarchive-two.vercel.app/ ** 
 
-A fan-built listening room for Kanye West / Ye's discography — 21 albums including official releases, shelved projects, and unreleased material.
+Ye's discography — 21 albums including official releases, shelved projects, and unreleased material.
 
 Audio and artwork sourced from [YZY Radio](https://yzyradio.com) by Stratosphero. Non-commercial.
 
