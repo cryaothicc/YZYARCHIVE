@@ -3,11 +3,10 @@ import { ListeningRoom } from "@/components/music/ListeningRoom";
 
 export const metadata: Metadata = {
   title: "YZYARCHIVE",
-  description:
-    "An intimate collection of independent sounds. Browse records, explore tracks, and take a moment to listen.",
+  description: "Every Kanye West album, leak, and shelved project. All in one place.",
   openGraph: {
     title: "YZYARCHIVE",
-    description: "Five carefully curated demo albums. Less noise, more listening.",
+    description: "Every Kanye West album, leak, and shelved project. All in one place.",
     type: "website",
   },
   twitter: {
