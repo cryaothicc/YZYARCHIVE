@@ -121,7 +121,7 @@ export function ListeningRoom() {
   return (
     <div className="listening-room">
       <header className="site-header">
-        <Link href="/" className="wordmark" aria-label="YZY Radio home">
+        <Link href="/" className="wordmark" aria-label="YZYARCHIVE home">
           YZY<span className="wordmark-dot">.</span>
         </Link>
         {/* <span className="header-label">nothing got lost.</span> */}

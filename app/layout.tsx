@@ -11,11 +11,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "YZY Radio — The Kanye West Archive",
-  description: "Every Kanye West album, leak, and shelved project. All in one place.",
+  title: "YZYARCHIVE",
+  description: "Good music never dies.",
   openGraph: {
-    title: "YZY Radio — The Kanye West Archive",
-    description: "Every Kanye West album, leak, and shelved project. All in one place.",
+    title: "YZYARCHIVE",
+    description: "Good music never dies.",
     type: "website",
   },
   twitter: {
