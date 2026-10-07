@@ -325,7 +325,7 @@ export function ListeningRoom() {
             rel="noopener noreferrer"
             style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: "5px" }}
           >
-            <Github size={11} strokeWidth={1.5} style={{ flexShrink: 0 }} />
+            <Github size={11} strokeWidth={1.5} style={{ flexShrink: 0, position: "relative", top: "0.5px" }} />
             @cryaothicc
           </a>
         </span>
