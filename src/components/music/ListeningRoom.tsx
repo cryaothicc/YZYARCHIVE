@@ -316,7 +316,7 @@ export function ListeningRoom() {
         </div>
       </section>
       <div className="collection-footer">
-        {/* <span>From College Dropout to Bully.</span> */}
+        <span>From College Dropout to Bully.</span>
         {/* <span>Unreleased, shelved & forgotten. All in one place.</span> */}
         <span className="demo-label">
           <a
