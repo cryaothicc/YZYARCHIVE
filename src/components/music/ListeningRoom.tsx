@@ -3,7 +3,7 @@
 import { useEffect, useReducer, useRef, useState } from "react";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Disc3, Github, Play, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { albums, ALBUM_COUNT, initialMusic, musicReducer } from "@/lib/music";
 import { Player } from "./Player";
@@ -122,7 +122,6 @@ export function ListeningRoom() {
     <div className="listening-room">
       <header className="site-header">
         <Link href="/" className="wordmark" aria-label="YZY Radio home">
-          <Disc3 size={23} strokeWidth={1.4} />
           YZY<span className="wordmark-dot">.</span>
         </Link>
         {/* <span className="header-label">nothing got lost.</span> */}
@@ -323,19 +322,8 @@ export function ListeningRoom() {
             href="https://github.com/cryaothicc"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              color: "inherit",
-              textDecoration: "none",
-              display: "flex",
-              alignItems: "center",
-              gap: "5px",
-            }}
+            style={{ color: "inherit", textDecoration: "none" }}
           >
-            <Github
-              size={11}
-              strokeWidth={1.5}
-              style={{ flexShrink: 0, position: "relative", top: "0.5px" }}
-            />
             @cryaothicc
           </a>
         </span>
