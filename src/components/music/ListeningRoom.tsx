@@ -29,7 +29,7 @@ export function ListeningRoom() {
     startIndex: startingSlide,
     loop: true,
     containScroll: false,
-    duration: 35,
+    duration: 25,
     watchDrag: () => !openedRef.current,
   });
   const album = albums[state.focused] ?? albums[0];

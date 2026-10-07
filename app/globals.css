@@ -118,7 +118,7 @@
   isolation: isolate;
 }
 .carousel-viewport { height: 100%; width: 100%; overflow: hidden; touch-action: pan-y pinch-zoom; }
-.carousel-track { display: flex; align-items: center; height: 100%; }
+.carousel-track { display: flex; align-items: center; height: 100%; will-change: transform; }
 /* Hide until Embla initialises to prevent flash of misaligned slides */
 .collection:not(.carousel-ready) .carousel-viewport { opacity: 0; }
 .collection.carousel-ready .carousel-viewport { opacity: 1; transition: opacity 300ms ease; }
@@ -129,7 +129,7 @@
 .album-slide[data-offset="1"]  { --cover-angle: -46deg;--cover-scale: .84;  --cover-depth: -65px;  z-index: 20; }
 .album-slide[data-offset="-2"] { --cover-angle: 46deg; --cover-scale: .68;  --cover-depth: -130px; z-index: 10; }
 .album-slide[data-offset="2"]  { --cover-angle: -46deg;--cover-scale: .68;  --cover-depth: -130px; z-index: 10; }
-.album-slide { flex: 0 0 var(--slide-size); min-width: 0; height: var(--cover-size); position: relative; perspective: 1100px; pointer-events: none; }
+.album-slide { flex: 0 0 var(--slide-size); min-width: 0; height: var(--cover-size); position: relative; perspective: 1100px; pointer-events: none; will-change: transform; }
 .album-cover {
   position: absolute;
   width: var(--cover-size); height: var(--cover-size);
@@ -139,6 +139,8 @@
   box-shadow: var(--cover-shadow);
   transform-style: preserve-3d;
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   pointer-events: auto;
 }
 .album-cover:hover { background: transparent; }
