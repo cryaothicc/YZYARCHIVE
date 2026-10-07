@@ -907,8 +907,35 @@
     --slide-size: 116px;
     --header-h: 48px;
   }
+  .collection-heading {
+    margin-top: 6px;
+  }
   .collection-heading h1 {
     font-size: 17px;
+    margin-top: 2px;
+    line-height: 1.2;
+  }
+  .carousel-stage {
+    height: calc(var(--cover-size) + 34px);
+  }
+  .album-details {
+    margin-top: 4px;
+  }
+  .album-details h2 {
+    font-size: 16px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+  }
+  .album-actions {
+    margin-top: 6px;
+  }
+  .collection-footer {
+    min-height: 28px;
+  }
+  .player-bar {
+    padding-top: 14px;
+    padding-bottom: max(14px, env(safe-area-inset-bottom));
+    min-height: 0;
   }
   .track-panel {
     max-height: calc(var(--cover-size) + 40px);
