@@ -3,7 +3,7 @@
 import { useEffect, useReducer, useRef, useState } from "react";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Disc3, Play, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Disc3, Github, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { albums, ALBUM_COUNT, initialMusic, musicReducer } from "@/lib/music";
 import { Player } from "./Player";
@@ -125,7 +125,7 @@ export function ListeningRoom() {
           <Disc3 size={23} strokeWidth={1.4} />
           YZY<span className="wordmark-dot">.</span>
         </Link>
-        <span className="header-label">nothing got lost.</span>
+        {/* <span className="header-label">nothing got lost.</span> */}
         <span className="edition">EST. 2003</span>
       </header>
       <section className="collection-heading">
@@ -316,15 +316,16 @@ export function ListeningRoom() {
         </div>
       </section>
       <div className="collection-footer">
-        <span>From College Dropout to Bully.</span>
-        <span>Unreleased, shelved & forgotten. All in one place.</span>
+        {/* <span>From College Dropout to Bully.</span> */}
+        {/* <span>Unreleased, shelved & forgotten. All in one place.</span> */}
         <span className="demo-label">
           <a
             href="https://github.com/cryaothicc"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "inherit", textDecoration: "none" }}
+            style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px" }}
           >
+            <Github size={13} strokeWidth={1.5} />
             @cryaothicc
           </a>
         </span>
