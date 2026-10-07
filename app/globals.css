@@ -903,39 +903,57 @@
 /* Short screens */
 @media (max-height: 700px) and (max-width: 767px) {
   :root {
-    --cover-size: 170px;
-    --slide-size: 116px;
-    --header-h: 48px;
+    --cover-size: 160px;
+    --slide-size: 110px;
+    --header-h: 44px;
   }
   .collection-heading {
-    margin-top: 6px;
+    margin-top: 4px;
   }
   .collection-heading h1 {
-    font-size: 17px;
+    font-size: 16px;
     margin-top: 2px;
     line-height: 1.2;
   }
   .carousel-stage {
-    height: calc(var(--cover-size) + 34px);
+    height: calc(var(--cover-size) + 30px);
   }
   .album-details {
-    margin-top: 4px;
+    margin-top: 2px;
   }
   .album-details h2 {
-    font-size: 16px;
-    margin-top: 4px;
+    font-size: 15px;
+    margin-top: 3px;
+    margin-bottom: 1px;
+  }
+  .album-index {
+    font-size: 9px;
+  }
+  .album-meta {
+    font-size: 10px;
     margin-bottom: 2px;
   }
   .album-actions {
-    margin-top: 6px;
+    margin-top: 4px;
+    gap: 8px;
+  }
+  .album-actions button {
+    font-size: 10px;
+    min-width: 80px;
+    height: 32px;
   }
   .collection-footer {
-    min-height: 28px;
+    min-height: 26px;
+    font-size: 9px;
   }
   .player-bar {
-    padding-top: 14px;
-    padding-bottom: max(14px, env(safe-area-inset-bottom));
+    padding-top: 10px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    row-gap: 6px;
     min-height: 0;
+  }
+  .seek-area {
+    margin-top: 4px;
   }
   .track-panel {
     max-height: calc(var(--cover-size) + 40px);
