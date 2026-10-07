@@ -125,7 +125,7 @@ export function ListeningRoom() {
           <Disc3 size={23} strokeWidth={1.4} />
           YZY<span className="wordmark-dot">.</span>
         </Link>
-        <span className="header-label">The Kanye West Archive</span>
+        <span className="header-label">nothing got lost.</span>
         <span className="edition">EST. 2003</span>
       </header>
       <section className="collection-heading">
