@@ -323,9 +323,9 @@ export function ListeningRoom() {
             href="https://github.com/cryaothicc"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px" }}
+            style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: "5px" }}
           >
-            <Github size={13} strokeWidth={1.5} />
+            <Github size={11} strokeWidth={1.5} style={{ flexShrink: 0 }} />
             @cryaothicc
           </a>
         </span>
