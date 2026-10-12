@@ -283,8 +283,9 @@
 
 /* When open: dim non-focused slides */
 .is-open .album-slide:not(.is-focused) {
-  opacity: 0.45;
+  opacity: 0;
   transition: opacity 300ms;
+  pointer-events: none;
 }
 
 /* ─── Track panel ────────────────────────────────────────────────────────── */
