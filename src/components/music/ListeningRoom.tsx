@@ -334,7 +334,9 @@ export function ListeningRoom() {
           </span>
           <h2>{album.title}</h2>
           <div className="album-meta">
-            <span>{album.year}</span>
+            <span style={album.year === "" ? { visibility: "hidden" } : undefined}>
+              {album.year || "0000"}
+            </span>
           </div>
           <div className="album-actions">
             {album.id !== "links" && (
