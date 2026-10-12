@@ -79,7 +79,7 @@ export function Player({
     >
       <audio
         ref={audioRef}
-        src={state.noSelection ? undefined : track.src}
+        src={state.noSelection ? undefined : "src" in track ? track.src : undefined}
         preload="auto"
         onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
         onTimeUpdate={(e) => dispatch({ type: "seek", value: e.currentTarget.currentTime })}
