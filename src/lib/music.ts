@@ -631,7 +631,7 @@ export const albums = [
         title: "✴ Living So Italian [V15]",
         src: "/audio/watch-the-throne/living-so-italian-grail.wav",
       },
-      { title: "＊ Awesome [V3]", src: "/audio/watch-the-throne/awesome-V3.mp3" },
+      { title: "✳ Awesome [V3]", src: "/audio/watch-the-throne/awesome-V3.mp3" },
     ],
   },
 
