@@ -316,6 +316,16 @@ export function ListeningRoom() {
       </section>
       <div className="collection-footer">
         <span>From College Dropout to Bully.</span>
+        <span style={{ color: "var(--subtle)" }}>
+          <a
+            href="https://yetracker.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "var(--foreground)", textDecoration: "none" }}
+          >
+            yetracker
+          </a>
+        </span>
         {/* <span>Unreleased, shelved & forgotten. All in one place.</span> */}
         <span className="demo-label">
           <a
@@ -325,15 +335,6 @@ export function ListeningRoom() {
             style={{ color: "var(--foreground)", textDecoration: "none" }}
           >
             @cryaothicc
-          </a>
-          <span style={{ margin: "0 6px", color: "var(--border)" }}>/</span>
-          <a
-            href="https://yetracker.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "var(--foreground)", textDecoration: "none" }}
-          >
-            yetracker
           </a>
         </span>
       </div>
