@@ -628,9 +628,10 @@ export const albums = [
     cover: "/covers/watch-the-throne.jpg",
     tracks: [
       {
-        title: "★ Living So Italian",
+        title: "★ Living So Italian [v15]",
         src: "/audio/watch-the-throne/living-so-italian-grail.wav",
       },
+      { title: "Awesome [v3]", src: "/audio/watch-the-throne/awesome-V3.mp3" },
     ],
   },
 
