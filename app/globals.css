@@ -963,6 +963,117 @@
   }
 }
 
+/* Short desktop screens (squished vertically on desktop) */
+@media (max-height: 700px) and (min-width: 768px) {
+  :root {
+    --cover-size: 200px;
+    --slide-size: 136px;
+    --header-h: 48px;
+    --player-h: 72px;
+  }
+  .collection-heading {
+    margin-top: 8px;
+  }
+  .collection-heading h1 {
+    font-size: 20px;
+    margin-top: 4px;
+  }
+  .carousel-stage {
+    height: calc(var(--cover-size) + 34px);
+  }
+  .album-details {
+    margin-top: 4px;
+  }
+  .album-details h2 {
+    font-size: 18px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+  }
+  .album-actions {
+    margin-top: 6px;
+  }
+  .album-actions button {
+    height: 32px;
+  }
+  .collection-footer {
+    min-height: 28px;
+  }
+  .player-bar {
+    padding: 10px var(--space-page);
+    min-height: 0;
+  }
+}
+
+/* Very short screens (under 500px height) */
+@media (max-height: 500px) {
+  :root {
+    --cover-size: 150px;
+    --slide-size: 104px;
+    --header-h: 40px;
+    --player-h: 60px;
+  }
+  .collection-heading {
+    margin-top: 4px;
+  }
+  .collection-heading h1 {
+    font-size: 15px;
+    margin-top: 2px;
+    line-height: 1.1;
+  }
+  .eyebrow {
+    display: none;
+  }
+  .carousel-stage {
+    height: calc(var(--cover-size) + 24px);
+  }
+  .album-details {
+    margin-top: 2px;
+  }
+  .album-details h2 {
+    font-size: 14px;
+    margin-top: 2px;
+    margin-bottom: 0;
+  }
+  .album-index {
+    display: none;
+  }
+  .album-meta {
+    margin-bottom: 0;
+  }
+  .album-actions {
+    margin-top: 4px;
+    gap: 6px;
+  }
+  .album-actions button {
+    font-size: 10px;
+    min-width: 76px;
+    height: 28px;
+  }
+  .collection-footer {
+    min-height: 22px;
+    font-size: 8px;
+  }
+  .player-bar {
+    padding: 8px var(--space-page);
+    min-height: 0;
+    row-gap: 4px;
+  }
+  .seek-area {
+    margin-top: 2px;
+  }
+  .player-song img {
+    width: 32px;
+    height: 32px;
+  }
+  .song-title {
+    font-size: 10px;
+  }
+  .song-artist {
+    font-size: 9px;
+    margin-top: 2px;
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,

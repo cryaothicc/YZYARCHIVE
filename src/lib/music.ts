@@ -618,9 +618,24 @@ export const albums = [
       { title: "★ Love", src: "/audio/cruel-winter/love.mp3", bonus: true },
     ],
   },
+
+  {
+    id: "watch-the-throne",
+    title: "Watch The Throne",
+    artist: "Jay-Z & Kanye West",
+    year: "2011",
+    genre: "Hip-Hop",
+    cover: "/covers/watch-the-throne.jpg",
+    tracks: [
+      {
+        title: "★ Living So Italian ★",
+        src: "/audio/watch-the-throne/living-so-italian-grail.wav",
+      },
+    ],
+  },
 ] as const;
 
-export const ALBUM_COUNT = albums.length; // 21
+export const ALBUM_COUNT = albums.length;
 
 export type Album = (typeof albums)[number];
 export type Track = Album["tracks"][number];
