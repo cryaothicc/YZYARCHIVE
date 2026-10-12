@@ -322,9 +322,18 @@ export function ListeningRoom() {
             href="https://github.com/cryaothicc"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "inherit", textDecoration: "none" }}
+            style={{ color: "var(--foreground)", textDecoration: "none" }}
           >
             @cryaothicc
+          </a>
+          {" · "}
+          <a
+            href="https://yetracker.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "var(--foreground)", textDecoration: "none" }}
+          >
+            yetracker
           </a>
         </span>
       </div>
