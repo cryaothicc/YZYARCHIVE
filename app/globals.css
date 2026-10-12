@@ -167,10 +167,12 @@
   z-index: 1;
   flex: 1;
   min-height: 0;
+  max-height: 680px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  margin: auto 0;
 }
 
 /* ─── Carousel ───────────────────────────────────────────────────────────── */
