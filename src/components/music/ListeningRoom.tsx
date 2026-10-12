@@ -120,6 +120,15 @@ export function ListeningRoom() {
   }, [opened]);
   return (
     <div className="listening-room">
+      <div
+        className={`ambient-cover${state.playing && !state.noSelection ? " is-active" : ""}`}
+        aria-hidden="true"
+        style={{
+          backgroundImage: state.noSelection
+            ? undefined
+            : `url(${albums[state.album]?.cover ?? ""})`,
+        }}
+      />
       <header className="site-header">
         <Link href="/" className="wordmark" aria-label="YZYARCHIVE home">
           YZY<span className="wordmark-dot">.</span>

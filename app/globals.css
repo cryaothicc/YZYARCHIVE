@@ -93,6 +93,8 @@
 
 /* ─── Header ─────────────────────────────────────────────────────────────── */
 .site-header {
+  position: relative;
+  z-index: 1;
   height: var(--header-h);
   flex-shrink: 0;
   margin: 0 var(--space-page);
@@ -128,6 +130,8 @@
 
 /* ─── Collection heading ─────────────────────────────────────────────────── */
 .collection-heading {
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
   margin: 20px var(--space-page) 0;
   display: flex;
@@ -159,6 +163,8 @@
 
 /* ─── Collection (carousel + details) ───────────────────────────────────── */
 .collection {
+  position: relative;
+  z-index: 1;
   flex: 1;
   min-height: 0;
   display: flex;
@@ -448,6 +454,8 @@
 
 /* ─── Footer ─────────────────────────────────────────────────────────────── */
 .collection-footer {
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
   display: flex;
   gap: 18px;
@@ -720,6 +728,31 @@
 .player-bar--idle .waveform {
   opacity: 0.25;
   cursor: default;
+}
+
+/* ─── Ambient blobs ──────────────────────────────────────────────────────── */
+.ambient-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+/* ─── Ambient cover ──────────────────────────────────────────────────────── */
+.ambient-cover {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  filter: blur(80px) saturate(1.4);
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1.2s ease;
+}
+.ambient-cover.is-active {
+  opacity: 0.12;
 }
 
 /* ─── Breakpoints ────────────────────────────────────────────────────────── */
