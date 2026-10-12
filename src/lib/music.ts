@@ -649,7 +649,7 @@ export const albums = [
   },
 ] as const;
 
-export const ALBUM_COUNT = albums.length;
+export const ALBUM_COUNT = albums.filter((a) => a.id !== "links").length;
 
 export type Album = (typeof albums)[number];
 export type Track = Album["tracks"][number];
