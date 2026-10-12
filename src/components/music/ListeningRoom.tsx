@@ -3,7 +3,7 @@
 import { useEffect, useReducer, useRef, useState } from "react";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Moon, Play, Sun, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { albums, ALBUM_COUNT, initialMusic, musicReducer } from "@/lib/music";
 import { Player } from "./Player";
@@ -17,7 +17,6 @@ export function ListeningRoom() {
   const [opened, setOpened] = useState(false);
   const [focusedSlide, setFocusedSlide] = useState(startingSlide);
   const [carouselReady, setCarouselReady] = useState(false);
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const stage = useRef<HTMLDivElement>(null);
   const trackListRef = useRef<HTMLOListElement>(null);
   const revealAnimation = useRef<Animation | null>(null);
@@ -120,32 +119,12 @@ export function ListeningRoom() {
     if (opened) closeButton.current?.focus();
   }, [opened]);
   return (
-    <div className={`listening-room${theme === "light" ? " light" : ""}`}>
+    <div className="listening-room">
       <header className="site-header">
         <Link href="/" className="wordmark" aria-label="YZYARCHIVE home">
           YZY<span className="wordmark-dot">.</span>
         </Link>
         {/* <span className="header-label">nothing got lost.</span> */}
-        <button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          aria-label="Toggle theme"
-          style={{
-            marginLeft: "auto",
-            background: "none",
-            border: "none",
-            color: "var(--subtle)",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            padding: "4px",
-          }}
-        >
-          {theme === "dark" ? (
-            <Sun size={13} strokeWidth={1.5} />
-          ) : (
-            <Moon size={13} strokeWidth={1.5} />
-          )}
-        </button>
         <span className="edition">EST. 2003</span>
       </header>
       <section className="collection-heading">

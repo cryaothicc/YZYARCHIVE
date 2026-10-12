@@ -52,21 +52,6 @@
   --motion-spring: cubic-bezier(0.22, 0.8, 0.25, 1);
 }
 
-/* ─── Light mode ─────────────────────────────────────────────────────────── */
-.light {
-  --background: oklch(0.98 0 0);
-  --foreground: oklch(0.13 0 0);
-  --card: oklch(0.94 0 0);
-  --primary: oklch(0.13 0 0);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.91 0 0);
-  --muted-foreground: oklch(0.48 0 0);
-  --border: oklch(0.82 0 0);
-  --destructive: oklch(0.55 0.18 25);
-  --subtle: oklch(0.62 0 0);
-  --cover-shadow: 0 18px 28px oklch(0 0 0 / 0.1);
-}
-
 /* ─── Base ───────────────────────────────────────────────────────────────── */
 @layer base {
   * {
