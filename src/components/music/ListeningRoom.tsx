@@ -326,7 +326,7 @@ export function ListeningRoom() {
           >
             @cryaothicc
           </a>
-          {" · "}
+          <span style={{ margin: "0 6px", color: "var(--border)" }}>/</span>
           <a
             href="https://yetracker.net/"
             target="_blank"
