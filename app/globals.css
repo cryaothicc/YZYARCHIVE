@@ -296,6 +296,7 @@
   width: calc(var(--cover-size) + 60px);
   min-height: calc(var(--cover-size) + 10px);
   max-height: calc(var(--cover-size) + 10px);
+  max-width: calc(100vw - 40px);
   display: flex;
   flex-direction: column;
   background: var(--card);
@@ -1002,6 +1003,10 @@
   .player-bar {
     padding: 10px var(--space-page);
     min-height: 0;
+  }
+  .track-panel {
+    min-height: calc(var(--cover-size) + 10px);
+    max-height: calc(var(--cover-size) + 10px);
   }
 }
 
