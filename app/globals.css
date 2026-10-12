@@ -291,12 +291,12 @@
 /* ─── Track panel ────────────────────────────────────────────────────────── */
 .track-panel {
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 50%;
   /* Separate perspective from translateX so centering is clean */
   width: calc(var(--cover-size) + 60px);
-  min-height: calc(var(--cover-size) + 10px);
-  max-height: calc(var(--cover-size) + 10px);
+  min-height: calc(var(--cover-size) + 50px);
+  max-height: calc(var(--cover-size) + 50px);
   max-width: calc(100vw - 40px);
   display: flex;
   flex-direction: column;
@@ -960,6 +960,7 @@
   }
   .track-panel {
     max-height: calc(var(--cover-size) + 40px);
+    top: 5px;
   }
   .track-row {
     height: 36px;
@@ -1006,8 +1007,8 @@
     min-height: 0;
   }
   .track-panel {
-    min-height: calc(var(--cover-size) + 10px);
-    max-height: calc(var(--cover-size) + 10px);
+    min-height: calc(var(--cover-size) + 34px);
+    max-height: calc(var(--cover-size) + 34px);
   }
 }
 
