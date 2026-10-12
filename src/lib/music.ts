@@ -633,6 +633,20 @@ export const albums = [
       },
     ],
   },
+
+  {
+    id: "links",
+    title: "Explore",
+    artist: "Unreleased & Alt Sources",
+    year: "",
+    genre: "",
+    cover: "/covers/links.jpg",
+    tracks: [
+      { title: "yetracker.net", url: "https://yetracker.net/" },
+      { title: "yetracker.cc", url: "https://yetracker.cc/" },
+      { title: "artistgrid.cx", url: "https://artistgrid.cx/" },
+    ],
+  },
 ] as const;
 
 export const ALBUM_COUNT = albums.length;

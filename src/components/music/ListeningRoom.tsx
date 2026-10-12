@@ -126,10 +126,13 @@ export function ListeningRoom() {
         </Link>
         {/* <span className="header-label">nothing got lost.</span> */}
         <span className="edition">EST. 2003</span>
+        <span className="edition" style={{ visibility: "hidden" }} aria-hidden="true">
+          00.00.0000
+        </span>
       </header>
       <section className="collection-heading">
         <div>
-          <span className="eyebrow">THE ARCHIVE</span>
+          <span className="eyebrow">PERSONAL YEVAULT</span>
           <h1>Good music never dies.</h1>
         </div>
         <span className="collection-count">
@@ -248,9 +251,13 @@ export function ListeningRoom() {
             </div>
             <ol className="track-list" ref={trackListRef}>
               {album.tracks.map((track, index) => {
+                const isLink = "url" in track;
                 const active =
-                  state.album === state.focused && state.track === index && state.playing;
-                const isBonus = "bonus" in track && track.bonus;
+                  !isLink &&
+                  state.album === state.focused &&
+                  state.track === index &&
+                  state.playing;
+                const isBonus = !isLink && "bonus" in track && track.bonus;
                 const prevIsNotBonus =
                   index > 0 &&
                   !(
@@ -259,29 +266,60 @@ export function ListeningRoom() {
                   );
                 return (
                   <li key={track.title}>
-                    {isBonus && prevIsNotBonus && <div className="bonus-divider">BONUS</div>}
-                    <Button
-                      variant="ghost"
-                      className={`track-row ${active ? "active-track" : ""} ${isBonus ? "bonus-track" : ""}`}
-                      onClick={() =>
-                        dispatch({ type: "track", album: state.focused, track: index })
-                      }
-                      aria-label={`Play ${track.title}`}
-                      aria-current={active ? "true" : undefined}
-                    >
-                      <span className="track-number">
-                        {active ? (
-                          <span className="playing-bars" aria-label="Playing">
-                            <i />
-                            <i />
-                            <i />
-                          </span>
-                        ) : (
-                          String(index + 1).padStart(2, "0")
-                        )}
-                      </span>
-                      <span>{track.title}</span>
-                    </Button>
+                    {!isLink && isBonus && prevIsNotBonus && (
+                      <div className="bonus-divider">BONUS</div>
+                    )}
+                    {isLink ? (
+                      <a
+                        href={(track as { title: string; url: string }).url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="track-row"
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          height: "44px",
+                          padding: "0 5px",
+                          fontSize: "11px",
+                          color: "var(--foreground)",
+                          textDecoration: "none",
+                          borderTop: "var(--hairline) solid var(--border)",
+                        }}
+                      >
+                        <span className="track-number" style={{ color: "var(--subtle)" }}>
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span>{track.title}</span>
+                        <ArrowUpRight
+                          size={11}
+                          style={{ marginLeft: "auto", color: "var(--subtle)" }}
+                        />
+                      </a>
+                    ) : (
+                      <Button
+                        variant="ghost"
+                        className={`track-row ${active ? "active-track" : ""} ${isBonus ? "bonus-track" : ""}`}
+                        onClick={() =>
+                          dispatch({ type: "track", album: state.focused, track: index })
+                        }
+                        aria-label={`Play ${track.title}`}
+                        aria-current={active ? "true" : undefined}
+                      >
+                        <span className="track-number">
+                          {active ? (
+                            <span className="playing-bars" aria-label="Playing">
+                              <i />
+                              <i />
+                              <i />
+                            </span>
+                          ) : (
+                            String(index + 1).padStart(2, "0")
+                          )}
+                        </span>
+                        <span>{track.title}</span>
+                      </Button>
+                    )}
                   </li>
                 );
               })}
@@ -299,16 +337,18 @@ export function ListeningRoom() {
             <span>{album.year}</span>
           </div>
           <div className="album-actions">
-            <Button onClick={() => dispatch({ type: "playAlbum", index: state.focused })}>
-              <Play size={15} />
-              Play
-            </Button>
+            {album.id !== "links" && (
+              <Button onClick={() => dispatch({ type: "playAlbum", index: state.focused })}>
+                <Play size={15} />
+                Play
+              </Button>
+            )}
             <Button
               ref={openButton}
               variant="outline"
               onClick={() => (opened ? close() : setOpened(true))}
             >
-              {opened ? "Close album" : "Open album"}
+              {opened ? "Close" : album.id === "links" ? "Open" : "Open album"}
               <ArrowUpRight size={15} />
             </Button>
           </div>
@@ -316,16 +356,6 @@ export function ListeningRoom() {
       </section>
       <div className="collection-footer">
         <span>From College Dropout to Bully.</span>
-        <span style={{ color: "var(--subtle)" }}>
-          <a
-            href="https://yetracker.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "var(--foreground)", textDecoration: "none" }}
-          >
-            yetracker
-          </a>
-        </span>
         {/* <span>Unreleased, shelved & forgotten. All in one place.</span> */}
         <span className="demo-label">
           <a
