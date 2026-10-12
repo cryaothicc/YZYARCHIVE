@@ -281,7 +281,7 @@ export function ListeningRoom() {
                           fontSize: "11px",
                           color: "var(--foreground)",
                           textDecoration: "none",
-                          borderTop: "var(--hairline) solid var(--border)",
+                          borderTop: index === 0 ? "none" : "var(--hairline) solid var(--border)",
                         }}
                       >
                         <span className="track-number" style={{ color: "var(--subtle)" }}>
