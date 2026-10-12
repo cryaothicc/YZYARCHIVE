@@ -126,9 +126,6 @@ export function ListeningRoom() {
         </Link>
         {/* <span className="header-label">nothing got lost.</span> */}
         <span className="edition">EST. 2003</span>
-        <span className="edition" style={{ visibility: "hidden" }} aria-hidden="true">
-          00.00.0000
-        </span>
       </header>
       <section className="collection-heading">
         <div>
