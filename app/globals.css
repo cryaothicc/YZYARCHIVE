@@ -462,6 +462,7 @@
   align-items: center;
   margin: 0 var(--space-page);
   min-height: 44px;
+  margin-bottom: var(--player-h);
   border-top: var(--hairline) solid var(--border);
   font-size: 10px;
   color: var(--subtle);
