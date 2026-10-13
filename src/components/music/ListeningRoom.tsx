@@ -156,7 +156,7 @@ export function ListeningRoom() {
           aria-modal="true"
         >
           <video
-            src="/Lift-Yourself.mp4"
+            src="/media/misc/a1.mp4"
             autoPlay
             playsInline
             onEnded={() => setKonamiActive(false)}
