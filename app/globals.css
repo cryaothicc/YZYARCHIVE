@@ -86,7 +86,8 @@
 /* ─── Page shell ─────────────────────────────────────────────────────────── */
 .listening-room {
   height: 100dvh;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -167,12 +168,10 @@
   z-index: 1;
   flex: 1;
   min-height: 0;
-  max-height: 680px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  margin: auto 0;
 }
 
 /* ─── Carousel ───────────────────────────────────────────────────────────── */
@@ -615,6 +614,8 @@
   padding: 18px var(--space-page);
   background: var(--background);
   z-index: 80;
+  position: sticky;
+  bottom: 0;
 }
 .player-song {
   display: flex;
@@ -793,7 +794,7 @@
     --header-h: 54px;
     --cover-size: 200px;
     --slide-size: 136px;
-    --player-h: 160px;
+    --player-h: 80px;
   }
 
   /* Header */
@@ -999,56 +1000,6 @@
   }
   .track-row {
     height: 36px;
-  }
-}
-
-/* Wide screens that are only moderately tall (landscape tablets, Nest Hub) */
-@media (max-height: 830px) and (min-width: 768px) {
-  :root {
-    --cover-size: 220px;
-    --slide-size: 148px;
-  }
-  .carousel-stage {
-    height: calc(var(--cover-size) + 36px);
-  }
-  .album-details h2 {
-    font-size: 20px;
-  }
-  .album-actions {
-    margin-top: 8px;
-  }
-  .collection-footer {
-    min-height: 32px;
-  }
-  .player-bar {
-    padding: 12px var(--space-page);
-  }
-}
-
-@media (max-height: 760px) and (min-width: 768px) {
-  :root {
-    --cover-size: 200px;
-    --slide-size: 136px;
-    --header-h: 52px;
-  }
-  .carousel-stage {
-    height: calc(var(--cover-size) + 30px);
-  }
-  .album-details h2 {
-    font-size: 18px;
-    margin-top: 4px;
-  }
-  .album-actions {
-    margin-top: 6px;
-  }
-  .album-actions button {
-    height: 34px;
-  }
-  .collection-footer {
-    min-height: 28px;
-  }
-  .player-bar {
-    padding: 10px var(--space-page);
   }
 }
 
