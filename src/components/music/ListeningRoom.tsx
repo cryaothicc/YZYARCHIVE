@@ -12,7 +12,7 @@ import { albumIndex, loopDistance } from "@/lib/carousel";
 const carouselAlbums = [...albums, ...albums, ...albums];
 const startingSlide = albums.length + initialMusic.focused;
 
-export function ListeningRoom() {
+export function ListeningRoom({ buildDate }: { buildDate: string }) {
   const [state, dispatch] = useReducer(musicReducer, initialMusic);
   const [opened, setOpened] = useState(false);
   const [focusedSlide, setFocusedSlide] = useState(startingSlide);
@@ -135,6 +135,10 @@ export function ListeningRoom() {
         </Link>
         {/* <span className="header-label">nothing got lost.</span> */}
         <span className="edition">EST. 2003</span>
+        <span className="edition" style={{ marginLeft: "6px", color: "var(--border)" }}>
+          —
+        </span>
+        <span className="edition">v.{buildDate}</span>
       </header>
       <section className="collection-heading">
         <div>
