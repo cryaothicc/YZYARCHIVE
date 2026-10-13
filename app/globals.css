@@ -86,10 +86,11 @@
 /* ─── Page shell ─────────────────────────────────────────────────────────── */
 .listening-room {
   height: 100dvh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  padding-bottom: var(--player-h);
+  box-sizing: border-box;
 }
 
 /* ─── Header ─────────────────────────────────────────────────────────────── */
@@ -614,8 +615,10 @@
   padding: 18px var(--space-page);
   background: var(--background);
   z-index: 80;
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
 }
 .player-song {
   display: flex;
