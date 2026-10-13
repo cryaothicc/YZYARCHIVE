@@ -17,6 +17,20 @@ export function ListeningRoom() {
   const [opened, setOpened] = useState(false);
   const [focusedSlide, setFocusedSlide] = useState(startingSlide);
   const [carouselReady, setCarouselReady] = useState(false);
+  const [konamiActive, setKonamiActive] = useState(false);
+  const konamiSequence = useRef<string[]>([]);
+  const KONAMI = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+  ];
   const stage = useRef<HTMLDivElement>(null);
   const trackListRef = useRef<HTMLOListElement>(null);
   const revealAnimation = useRef<Animation | null>(null);
@@ -118,8 +132,53 @@ export function ListeningRoom() {
   useEffect(() => {
     if (opened) closeButton.current?.focus();
   }, [opened]);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      konamiSequence.current = [...konamiSequence.current, e.key].slice(-KONAMI.length);
+      if (konamiSequence.current.join(",") === KONAMI.join(",")) {
+        setKonamiActive(true);
+        konamiSequence.current = [];
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
   return (
     <div className="listening-room">
+      {konamiActive && (
+        <div
+          className="konami-overlay"
+          onClick={() => setKonamiActive(false)}
+          onKeyDown={(e) => e.key === "Escape" && setKonamiActive(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <video
+            src="/Lift-Yourself.mp4"
+            autoPlay
+            playsInline
+            onEnded={() => setKonamiActive(false)}
+            style={{ maxWidth: "100%", maxHeight: "100%" }}
+          />
+          <button
+            onClick={() => setKonamiActive(false)}
+            aria-label="Close"
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              background: "none",
+              border: "none",
+              color: "white",
+              cursor: "pointer",
+            }}
+          >
+            <X size={24} />
+          </button>
+        </div>
+      )}
       <div
         className={`ambient-cover${state.playing && !state.noSelection ? " is-active" : ""}`}
         aria-hidden="true"

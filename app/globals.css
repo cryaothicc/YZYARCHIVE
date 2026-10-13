@@ -743,6 +743,19 @@
   pointer-events: none;
   overflow: hidden;
 }
+/* ─── Konami overlay ─────────────────────────────────────────────────────── */
+.konami-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: oklch(0 0 0 / 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 300ms ease;
+  cursor: pointer;
+}
+
 /* ─── Ambient cover ──────────────────────────────────────────────────────── */
 .ambient-cover {
   position: fixed;
