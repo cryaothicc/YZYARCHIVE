@@ -140,6 +140,24 @@ export function ListeningRoom() {
         setKonamiActive(true);
         konamiSequence.current = [];
       }
+      // Skip if typing in an input
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      switch (e.key) {
+        case " ":
+          e.preventDefault();
+          dispatch({ type: "toggle" });
+          break;
+        case "n":
+        case "N":
+          e.preventDefault();
+          dispatch({ type: "skip", direction: 1 });
+          break;
+        case "p":
+        case "P":
+          e.preventDefault();
+          dispatch({ type: "skip", direction: -1 });
+          break;
+      }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
