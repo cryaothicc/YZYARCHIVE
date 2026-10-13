@@ -10,4 +10,18 @@ Audio and artwork sourced from [YZY Radio](https://yzyradio.com) by Stratosphero
 
 Next.js 15 · TypeScript · Tailwind CSS v4 · Embla Carousel · shadcn/ui
 
+## Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| `Space` | Play / Pause |
+| `N` | Next track |
+| `P` | Previous track |
+| `← →` | Navigate carousel |
+| `Esc` | Close track panel |
+
+## Easter Egg
+
+↑ ↑ ↓ ↓ ← → ← → B A
+
 > All music belongs to Kanye West / Ye and respective rights holders.
