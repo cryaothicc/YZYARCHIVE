@@ -31,6 +31,8 @@ export function ListeningRoom() {
     "b",
     "a",
   ];
+  const wordmarkTaps = useRef(0);
+  const wordmarkTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const stage = useRef<HTMLDivElement>(null);
   const trackListRef = useRef<HTMLOListElement>(null);
   const revealAnimation = useRef<Animation | null>(null);
@@ -207,7 +209,23 @@ export function ListeningRoom() {
         }}
       />
       <header className="site-header">
-        <Link href="/" className="wordmark" aria-label="YZYARCHIVE home">
+        <Link
+          href="/"
+          className="wordmark"
+          aria-label="YZYARCHIVE home"
+          onClick={(e) => {
+            e.preventDefault();
+            wordmarkTaps.current += 1;
+            if (wordmarkTimer.current) clearTimeout(wordmarkTimer.current);
+            wordmarkTimer.current = setTimeout(() => {
+              wordmarkTaps.current = 0;
+            }, 2000);
+            if (wordmarkTaps.current >= 7) {
+              wordmarkTaps.current = 0;
+              setKonamiActive(true);
+            }
+          }}
+        >
           YZY<span className="wordmark-dot">.</span>
         </Link>
         {/* <span className="header-label">nothing got lost.</span> */}
