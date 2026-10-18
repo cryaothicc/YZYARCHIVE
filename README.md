@@ -6,12 +6,11 @@
 
 Audio and artwork sourced from [YZY Radio](https://yzyradio.com) by Stratosphero. Non-commercial.
 
-## Stack
+##
 
 Next.js 15 · TypeScript · Tailwind CSS v4 · Embla Carousel · shadcn/ui
 
 ##
 
-↑ ↑ ↓ ↓ ← → ← → B A
-
 > All music belongs to Kanye West / Ye and respective rights holders.
+> ↑ ↑ ↓ ↓ ← → ← → B A
