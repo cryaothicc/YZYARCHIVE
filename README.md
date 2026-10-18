@@ -4,7 +4,7 @@
 
 **Live:** https://yzyarchive-two.vercel.app/
 
-Audio and artwork sourced from [YZY Radio](https://stratosphero.github.io/YZYRADIO) by Stratosphero. Non-commercial.
+Built with Next.js, TypeScript, Tailwind, Embla Carousel, shadcn/ui. Audio and artwork sourced from [YZY Radio](https://stratosphero.github.io/YZYRADIO) by Stratosphero. Non-commercial.
 
 ##
 
