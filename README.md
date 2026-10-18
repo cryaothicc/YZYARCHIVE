@@ -4,9 +4,9 @@
 
 **Live:** https://yzyarchive-two.vercel.app/
 
-↑ ↑ ↓ ↓ ← → ← → B A
-
 Audio and artwork sourced from [YZY Radio](https://yzyradio.com) by Stratosphero. Non-commercial.
+
+↑ ↑ ↓ ↓ ← → ← → B A
 
 ##
 
