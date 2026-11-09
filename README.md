@@ -15,9 +15,6 @@
 ![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white)
 ![License](https://img.shields.io/badge/Use-Non--commercial-lightgrey)
 
-<!-- Replace with a real screenshot or GIF -->
-<img src="./docs/screenshot.png" alt="YZYARCHIVE preview" width="800" />
-
 </div>
 
 ---
