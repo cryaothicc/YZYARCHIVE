@@ -2,8 +2,6 @@
 
 # YZYARCHIVE
 
-**A fan-made archive for browsing and listening to Ye's music and artwork.**
-
 *"I am Warhol. I am the No. 1 most impactful artist of our generation."*
 — Kanye West
 
